@@ -6,7 +6,6 @@ router.get('/', function(req, res){
     pool.connect(function(errorConnectingToDatabase, db, done){
         if(errorConnectingToDatabase){
             console.log('there was an error connecting to the database', errorConnectingToDatabase);
-            done();//hit done after the query is run
             res.sendStatus(500)
         } else{//end if start else
             db.query("SELECT * FROM tasks ORDER BY id_completed, id;", function(errorMakingQuery, result){//can sort by varius collums by ,
