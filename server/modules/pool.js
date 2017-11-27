@@ -1,4 +1,4 @@
-var pg = require('pg');
+var pg = require('pg');// only need pg here because it passes it off to everything else
 
 var config = {//this object is going to tell pg what to do
     database: 'tasks', //name of our database
